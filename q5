@@ -1,0 +1,28 @@
+def inverter_string(s):
+    # Converte a string em uma lista de caracteres
+    lista_caracteres = list(s)
+    
+    # Inicializa as posições de início e fim
+    inicio = 0
+    fim = len(lista_caracteres) - 1
+    
+    # Troca os caracteres nas posições de início e fim
+    while inicio < fim:
+        lista_caracteres[inicio], lista_caracteres[fim] = lista_caracteres[fim], lista_caracteres[inicio]
+        inicio += 1
+        fim -= 1
+    
+    # Converte a lista de volta para string
+    return ''.join(lista_caracteres)
+
+# Solicita a entrada do usuário
+entrada_usuario = input("Digite uma string para inverter: ")
+
+# Inverte a string e exibe o resultado
+string_invertida = inverter_string(entrada_usuario)
+print(f"String invertida: {string_invertida}")
+
+# Exemplo com uma string previamente definida
+string_predefinida = "exemplo"
+string_invertida_predefinida = inverter_string(string_predefinida)
+print(f"String invertida (previamente definida): {string_invertida_predefinida}")

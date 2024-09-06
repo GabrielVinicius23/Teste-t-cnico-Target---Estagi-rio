@@ -1,0 +1,26 @@
+def analisar_faturamento(faturamento_diario):
+    if not faturamento_diario:
+        return "O vetor de faturamento está vazio."
+
+    # Calcular o menor valor de faturamento
+    menor_faturamento = min(faturamento_diario)
+
+    # Calcular o maior valor de faturamento
+    maior_faturamento = max(faturamento_diario)
+
+    # Calcular a média mensal
+    media_mensal = sum(faturamento_diario) / len(faturamento_diario)
+
+    # Contar o número de dias com faturamento superior à média mensal
+    dias_acima_media = sum(1 for valor in faturamento_diario if valor > media_mensal)
+
+    return {
+        "menor_faturamento": menor_faturamento,
+        "maior_faturamento": maior_faturamento,
+        "dias_acima_media": dias_acima_media
+    }
+
+# Exemplo de vetor de faturamento diário
+faturamento_diario = [200, 300, 150, 400, 250, 350, 280, 330, 290, 450, 320, 370]
+
+resultados = analisar_faturamento(faturamento_diario)
